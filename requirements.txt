@@ -1,3 +1,5 @@
 Django
-django-userena
+-e git+https://github.com/mjumbewu/django-model-filters.git#egg=django-model-filters
+-e git+https://github.com/pydanny/django-uni-form.git#egg=django-uni-form
+-e git+https://github.com/bread-and-pepper/django-userena.git#egg=django-userena
 PIL
