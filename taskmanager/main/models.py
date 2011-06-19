@@ -1,3 +1,6 @@
 from django.db import models
+from userena.models import UserenaBaseProfile
 
-# Create your models here.
+class AccountProfile (UserenaBaseProfile):
+    pass
+

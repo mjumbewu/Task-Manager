@@ -100,6 +100,21 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
+AUTHENTICATION_BACKENDS = (
+    'userena.backends.UserenaAuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+AUTH_PROFILE_MODULE = 'main.AccountProfile'
+
+ANONYMOUS_USER_ID = -1
+
+LOGIN_REDIRECT_URL = '/accounts/%(username)s/'
+USERENA_SIGNIN_REDIRECT_URL = LOGIN_REDIRECT_URL
+LOGIN_URL = '/accounts/signin/'
+LOGOUT_URL = '/accounts/signout/'
+
 ROOT_URLCONF = 'taskmanager.urls'
 
 TEMPLATE_DIRS = (
@@ -120,7 +135,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     
+    'main',
+    
+    'guardian',
     'userena',
+    'south',
 )
 
 # A sample logging configuration. The only tangible logging
