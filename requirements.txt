@@ -3,3 +3,11 @@ Django
 -e git+https://github.com/pydanny/django-uni-form.git#egg=django-uni-form
 -e git+https://github.com/bread-and-pepper/django-userena.git#egg=django-userena
 PIL
+South
+
+# DEPLOYMENT
+#
+# pip install -r requirements.txt
+# python manage.py syncdb
+# python manage.py migrate
+# python manage.py check_permissions
