@@ -7,6 +7,14 @@ from main.decorators import LoginRequired
 
 @LoginRequired
 class CreateProjectView (views.CreateView):
+    def get_form_kwargs(self):
+        """
+        Returns the keyword arguments for instantiating the form.
+        """
+        kwargs = super(CreateProjectView, self).get_form_kwargs()
+        kwargs['owner'] = self.request.user
+        return kwargs
+    
     form_class = taskman_forms.ProjectForm
     template_name = 'model_form.html'
 
