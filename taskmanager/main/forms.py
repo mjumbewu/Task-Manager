@@ -23,4 +23,8 @@ class ProjectForm (forms.ModelForm):
     class Meta:
         model = taskman_models.Project
         exclude = ('members',)
-    
+
+class TaskForm (forms.ModelForm):
+    class Meta:
+        model = taskman_models.Task
+

@@ -2,5 +2,8 @@
 {% load model_filters %}
 
 {% block content %}
-    {{ object|as_detail_html }}
+  {{ project|as_detail_html }}
+  <nav class="contextMenu">
+    <a href="{% url taskman_create_task project.pk %}">Add a Task</a>
+  </nav>
 {% endblock %}

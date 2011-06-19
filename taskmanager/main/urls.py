@@ -13,6 +13,9 @@ urlpatterns = patterns('taskmanager',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
     
+    url(r'^$', 
+        taskman_views.ProjectListView.as_view(),
+        name='taskman_project_list'),
     url(r'^create$', 
         taskman_views.CreateProjectView.as_view(),
         name='taskman_create_project'),
@@ -22,7 +25,8 @@ urlpatterns = patterns('taskmanager',
     url(r'^(?P<pk>\w+)/$', 
         taskman_views.ProjectDetailView.as_view(),
         name='taskman_project_details'),
-    url(r'^$', 
-        taskman_views.ProjectListView.as_view(),
-        name='taskman_project_list'),
+    
+    url(r'(?P<pk>\w+)/tasks/create$',
+        taskman_views.CreateTaskView.as_view(),
+        name='taskman_create_task'),
 )

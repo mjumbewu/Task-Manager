@@ -33,3 +33,15 @@ class ProjectMemberRole (models.Model):
     def __unicode__(self):
         return u'%s is a(n) %s on %s' % (self.member, self.role, self.project)
 
+class Task (models.Model):
+    project = models.ForeignKey(Project, related_name='tasks')
+    label = models.CharField(max_length=256)
+    points = models.IntegerField(null=True)
+    status = models.ForeignKey('TaskStatus', null=True)
+    note = models.TextField(default='')
+
+class TaskStatus (models.Model):
+    label = models.CharField(max_length=128)
+    specific_to = models.ForeignKey(Project, null=True,
+                                    related_name="taskstatus_choices")
+
