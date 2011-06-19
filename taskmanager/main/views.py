@@ -26,7 +26,7 @@ class UpdateProjectView (views.UpdateView):
 @LoginRequired
 class ProjectDetailView (views.DetailView):
     model = taskman_models.Project
-    template_name = 'model_filters/model_detail_page.html'
+    template_name = 'taskman/project_detail_page.html'
 
 @LoginRequired
 class ProjectListView (views.ListView):

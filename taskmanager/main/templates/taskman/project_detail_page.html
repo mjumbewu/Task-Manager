@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% load model_filters %}
+
+{% block content %}
+    {{ object|as_detail_html }}
+{% endblock %}
