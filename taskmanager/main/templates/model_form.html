@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load uni_form_tags %}
+
+{% block content %}
+    <form class="uniForm" action="" method="POST">
+        {{ form|as_uni_form }}
+        <button type="submit">Save</button>
+    </form>
+{% endblock %}

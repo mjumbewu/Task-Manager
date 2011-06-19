@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     
     url(r'^$', 'userena.views.signin'),
     url(r'^accounts/', include('userena.urls')),
+    url(r'^projects/', include('main.urls')),
 )

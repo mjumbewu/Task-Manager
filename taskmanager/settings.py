@@ -137,6 +137,8 @@ INSTALLED_APPS = (
     
     'main',
     
+    'model_filters',
+    'uni_form',
     'guardian',
     'userena',
     'south',
