@@ -16,20 +16,20 @@ class CreateProjectView (views.CreateView):
         return kwargs
     
     form_class = taskman_forms.ProjectForm
-    template_name = 'model_form.html'
+    template_name = 'uni_form/model_form_page.html'
 
 @LoginRequired
 class UpdateProjectView (views.UpdateView):
     form_class = taskman_forms.ProjectForm
-    template_name = 'model_form.html'
+    template_name = 'uni_form/model_form_page.html'
 
 @LoginRequired
 class ProjectDetailView (views.DetailView):
     model = taskman_models.Project
-    template_name = 'model_detail.html'
+    template_name = 'model_filters/model_detail_page.html'
 
 @LoginRequired
 class ProjectListView (views.ListView):
     model = taskman_models.Project
-    template_name = 'model_list.html'
+    template_name = 'model_filters/model_list_page.html'
 
