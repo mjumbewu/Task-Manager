@@ -25,6 +25,18 @@ class ProjectForm (forms.ModelForm):
         exclude = ('members',)
 
 class TaskForm (forms.ModelForm):
+    def __init__(self, project, *args, **kwargs):
+        super(TaskForm, self).__init__(*args, **kwargs)
+        self.project = project
+    
+    def save(self, commit=True):
+        task = super(TaskForm, self).save(False)
+        task.project = self.project
+        if commit:
+            task.save()
+        return task
+    
     class Meta:
         model = taskman_models.Task
+        exclude = ('project',)
 

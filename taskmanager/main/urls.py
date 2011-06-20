@@ -26,7 +26,7 @@ urlpatterns = patterns('taskmanager',
         taskman_views.ProjectDetailView.as_view(),
         name='taskman_project_details'),
     
-    url(r'(?P<pk>\w+)/tasks/create$',
+    url(r'(?P<project_pk>\w+)/tasks/create$',
         taskman_views.CreateTaskView.as_view(),
         name='taskman_create_task'),
 )
