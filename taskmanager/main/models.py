@@ -36,12 +36,18 @@ class ProjectMemberRole (models.Model):
 class Task (models.Model):
     project = models.ForeignKey(Project, related_name='tasks')
     label = models.CharField(max_length=256)
-    points = models.IntegerField(null=True)
-    status = models.ForeignKey('TaskStatus', null=True)
-    note = models.TextField(default='')
+    points = models.IntegerField(null=True, blank=True)
+    status = models.ForeignKey('TaskStatus', null=True, blank=True)
+    note = models.TextField(default='', blank=True)
+    
+    def __unicode__(self):
+        return self.label
 
 class TaskStatus (models.Model):
     label = models.CharField(max_length=128)
     specific_to = models.ForeignKey(Project, null=True,
                                     related_name="taskstatus_choices")
+    
+    def __unicode__(self):
+        return self.label
 
